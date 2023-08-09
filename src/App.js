@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import * as faCons from "react-icons/fa";
+
+import { Routes, Route } from 'react-router-dom';
+
+import Contacts from "./pages/Contacts";
+import Error from "./pages/Error";
+import NewContact from "./pages/NewContact";
+import PersonCard from "./pages/PersonCard";
+import PersonDetail from "./pages/PersonDetail";
+import Layout from "./pages/Layout";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route element={<Layout />} >
+          <Route path="/" element={<Contacts />} />
+          <Route path="/contacts" element={<NewContact />} />
+          <Route path="/people" element={<PersonCard />} />
+          <Route path="/person/:id" element={<PersonDetail />} />
+          <Route path="*" element={<Error />} />
+        </Route>
+      </Routes>
+
+    </>
   );
 }
 
