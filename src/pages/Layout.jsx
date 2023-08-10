@@ -18,16 +18,14 @@ const Layout = () => {
                     <Header />
                     <div className="row">
                         <div 
-                            className="col-md-12">
+                            className="col-md-12 outlet">
                             <Outlet />
                         </div>
-                        <div className="footer">
+                        <div className="col-md-9 footer">
                             <Footer />
                         </div>
                     </div>
-                    <div className="footer">
-                        <Footer />
-                    </div>
+                    
                     
                 </div>
             </div>
