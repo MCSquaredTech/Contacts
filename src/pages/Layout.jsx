@@ -14,22 +14,20 @@ const Layout = () => {
                 <div className="col-md-auto sidebar">
                     <Sidebar />
                 </div>
-                <div className="col-md-9 header">
-                    <Header />
-                    <div className="row">
-                        <div 
-                            className="col-md-12 outlet">
-                            <Outlet />
-                        </div>
-                        <div className="col-md-9 footer">
-                            <Footer />
-                        </div>
+                <div className="col-md header">
+                    <Header /> 
+                    <div className='col-md-9 outlet'>
+                        <Outlet />
                     </div>
-                    
-                    
-                </div>
+                    <div className="col-md-9 footer">
+                        <Footer />
+                    </div> 
+                 </div>
+                
+                
             </div>
-        </div>
+        
+    </div>
   )
 }
 

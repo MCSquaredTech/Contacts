@@ -3,7 +3,7 @@
 
 .container { 
     display: flex;
-    width: 75%;
+    width: 85%;
     height: 100vh;
     position: relative;
     margin: 0 auto;
@@ -12,7 +12,24 @@
 
     flex-flow: column wrap;
     flex-grow: 1;
-    height: 100hv;
+}
+
+.sidebar-header { 
+    display: flex; 
+    flex: flex-flow wrap;
+    border-bottom: 1px solid white; 
+
+    width: 250px; 
+    min-width: 80px;
+    
+
+    padding: 2px;
+    margin: 15px; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-align: center;
+    
 }
 
 .sidebar { 
@@ -21,39 +38,58 @@
     width: 250px; 
     min-width: 80px;
 
-    height: 100hv;
+    padding: 2px;
+    height: 100vh;
     min-height: 400px;
+    left: -1px;
+    top: -4px;
 
     overflow: hidden;
+}
 
-    background: black;
+.sidebar-menu { 
+    background: black; 
     color: white;
+}
+
+.sidebar-menuitem:hover { 
+    background: white;
+    color: black;
 }
 
 .header { 
     display: flex;
     flex-flow: column wrap;
 
-    height: 150px; 
-    min-height: 100px;
-
-    width: 100wv; 
+    padding: 2px;
+    height: 80px; 
+    width: 75vw;
 
     background: black; 
     color: white;
+
+    border-bottom: 1px solid white;
 
 }
 
 .outlet { 
     display: flex;
     flex-flow: column wrap;
+    position: absolute;
+
+    padding: 2px;
+
+    height: 88vh;
+    width: 100vw; 
+    left: 250px;
+    top: 80px;
 
     overflow: hidden;
-    height: 100fv;
-    width: 100wv; 
 
     background: black;
     color: white;
+
+    
 
 }
 
@@ -61,16 +97,36 @@
     display: flex;
     flex-flow: column wrap;
 
-    height: 50px;
+    padding: 2px;
+    height: 40px;
     min-height: 25px;
 
-    width: 100wv;
-    text-align: center;
+    width: 100vw;
+    text-align: start;
+    left: 250px;
 
     position: absolute;
-    bottom: 0;
+    bottom: 8px;
 
     background: black;
     color: white;
+/* 
+    border-top: 1px solid white; */
 
+}
+
+.nav-item { 
+    color: #ddd;
+}
+
+.nav-item:visited { 
+    color: #ddd;
+}
+
+.nav-item:hover { 
+    color: white;
+}
+
+.nave-item:active { 
+    color:goldenrod;
 }

@@ -18,6 +18,7 @@ import '../pages/Layout.css'
 const LeftSidebar = () => {
   const [ collapsed, setCollapsed ] = useState(false); 
   const [ toggled, setToggled ] = useState(false);
+  const [ menuActive, setMenuActive ] = useState('Dashboard')
 
   const handleCollapsed = () => { 
     setCollapsed(!collapsed);
@@ -33,23 +34,33 @@ const LeftSidebar = () => {
       collapsed={collapsed}
       toggled={toggled}
       onToggle={handleToggled}
-      breakPoint="md" >    
-      <Menu>
+      onCollapsed={handleCollapsed}
+      breakPoint="md" 
+      backgroundColor='black'
+      >    
+      <Menu
+        className='sidebar-menu'>
         {/* ProSidebar Header */}
-        <h5 style={{textAlign: "center"}}><bsIcons.BsPeopleFill /> Contact List</h5>
-        <MenuItem
+        <div 
+          className='sidebar-header'
+          >{menuActive}
+        </div>
+        <MenuItem className='sidebar-menuitem'
           icon={<aiIcons.AiFillDashboard size={"20px"}/>}
           component={<Link to="/"  />}
+          onClick={() => setMenuActive('Dashboard')}
           >Dashboard</MenuItem>
-        <MenuItem
+        <MenuItem className='sidebar-menuitem'
           icon={<bsIcons.BsBuildingFill size={"20px"}/>}
           component={<Link to="/"  />}
-          >Company</MenuItem>
-        <MenuItem
+          onClick={() => setMenuActive('Companies')}
+          >Companies</MenuItem>
+        <MenuItem className='sidebar-menuitem'
           icon={<riIcons.RiContactsFill size={"20px"}/>}
           component={<Link to="/contacts" />} 
+          onClick={() => setMenuActive('Contacts')}
           >Contacts</MenuItem>
-        <MenuItem
+        <MenuItem className='sidebar-menuitem'
           icon={<faIcons.FaRegIdBadge size={"20px"}/>}
           component={<Link to="/people" />} 
           >Card View</MenuItem>
